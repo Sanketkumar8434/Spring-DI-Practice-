@@ -9,8 +9,8 @@ A hands-on practice repository exploring **Spring IoC (Inversion of Control)** a
 ```
 Spring-DI-Practice/
 │
-├── IocProj1/                    # Foundational IoC project (XML-based config)
-├── IOCProj2/                    # Standard Spring IoC with mixed configuration
+├── IocProj1/                    # Foundational IoC project (XML + Annotaion-based configuration)
+├── IOCProj2/                    # Standard Spring IoC with XML + Annotaion-based configuration
 ├── IOCProj2 - 100p_code_Driven/ # 100% code-driven DI (no XML whatsoever)
 └── IOC_Proj_CodeDriven_Config/  # Java @Configuration based approach
 ```

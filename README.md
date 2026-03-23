@@ -11,16 +11,16 @@ Spring-DI-Practice/
 │
 ├── IocProj1/                    # Foundational IoC project (XML + Annotaion-based configuration)
 ├── IOCProj2/                    # Standard Spring IoC with XML + Annotaion-based configuration
-├── IOCProj2 - 100p_code_Driven/ # 100% code-driven DI (no XML whatsoever)
-└── IOC_Proj_CodeDriven_Config/  # Java @Configuration based approach
+├── IOCProj2 - 100p_code_Driven/ # 100% code-driven Configuration (no XML whatsoever)
+└── IOC_Proj_CodeDriven_Config/  # 100% code-driven Configuration
 ```
 
 ### Project Summaries
 
 | Project | Approach | Description |
 |---|---|---|
-| `IocProj1` | XML-based | First IoC project; beans defined in `applicationContext.xml` |
-| `IOCProj2` | Mixed | Standard Spring IoC with annotations + XML |
+| `IocProj1` | XML + Annotation-based Configuration| First IoC project; predefined java class beans defined in `applicationContext.xml` |
+| `IOCProj2` | XML + Annotation-based Configuration| Second IoC project; predefined java class beans defined in `applicationContext.xml` |
 | `IOCProj2 - 100p_code_Driven` | Pure Code | No XML; 100% annotation-driven DI with **Lombok** for boilerplate reduction |
 | `IOC_Proj_CodeDriven_Config` | Java `@Configuration` | Explicit bean definitions via Java config classes |
 
@@ -66,11 +66,31 @@ All projects use **`spring-context`** as the only explicitly declared Spring dep
 
 ```xml
 <!-- Pulls in all core Spring dependencies transitively -->
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-context</artifactId>
-    <version>6.x.x</version>
-</dependency>
+ <!-- Source: https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>7.0.5</version>
+      <scope>compile</scope>
+    </dependency>
+
+<!--Note: The below all the dependencies mysql connector and Hickari CP is used in IOC PROJ-2 -->
+
+<!-- Source: https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+    <dependency>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <version>9.4.0</version>
+      <scope>compile</scope>
+    </dependency>
+
+<!-- Source: https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
+    <dependency>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
+      <version>7.0.2</version>
+      <scope>compile</scope>
+    </dependency>
 ```
 
 Additionally, **`IOCProj2 - 100p_code_Driven`** uses the **Lombok** library to eliminate boilerplate getter/setter code:
